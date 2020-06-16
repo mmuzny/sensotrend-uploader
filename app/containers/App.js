@@ -64,58 +64,34 @@ import styles from '../../styles/components/App.module.less';
 
 const serverdata = {
   Local: {
-    API_URL: 'http://localhost:1300/tpapi',
-    UPLOAD_URL: 'http://localhost:1300/tpupload',
-    DATA_URL: 'http://localhost:1300/tpdata',
-    BLIP_URL: 'http://localhost:1300/'
+    API_URL: 'http://localhost:8009',
+    UPLOAD_URL: 'http://localhost:9122',
+    DATA_URL: 'http://localhost:9220',
+    BLIP_URL: 'http://localhost:3000'
   },
   Development: {
-    API_URL: 'https://dev.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://dev.sensotrend.fi/tpupload',
-    DATA_URL: 'https://dev.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://dev.sensotrend.fi/'
+    API_URL: 'https://dev-api.tidepool.org',
+    UPLOAD_URL: 'https://dev-uploads.tidepool.org',
+    DATA_URL: 'https://dev-api.tidepool.org/dataservices',
+    BLIP_URL: 'https://dev-app.tidepool.org'
   },
   Staging: {
-    API_URL: 'https://test.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://test.sensotrend.fi/tpupload',
-    DATA_URL: 'https://test.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://test.sensotrend.fi/'
+    API_URL: 'https://stg-api.tidepool.org',
+    UPLOAD_URL: 'https://stg-uploads.tidepool.org',
+    DATA_URL: 'https://stg-api.tidepool.org/dataservices',
+    BLIP_URL: 'https://stg-app.tidepool.org'
   },
   Integration: {
-    API_URL: 'https://test.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://test.sensotrend.fi/tpupload',
-    DATA_URL: 'https://test.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://test.sensotrend.fi/'
+    API_URL: 'https://int-api.tidepool.org',
+    UPLOAD_URL: 'https://int-uploads.tidepool.org',
+    DATA_URL: 'https://int-api.tidepool.org/dataservices',
+    BLIP_URL: 'https://int-app.tidepool.org'
   },
   Production: {
-    API_URL: 'https://connect.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://connect.sensotrend.fi/tpupload',
-    DATA_URL: 'https://connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://connect.sensotrend.fi/'
-  },
-  NSDevelopment: {
-    API_URL: 'https://dev.nightscout.fi/tpapi',
-    UPLOAD_URL: 'https://dev.nightscout.fi/tpupload',
-    DATA_URL: 'https://dev.nightscout.fi/tpdata',
-    BLIP_URL: 'https://dev.nightscout.fi/'
-  },
-  NSStaging: {
-    API_URL: 'https://test.nightscout.fi/tpapi',
-    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
-    DATA_URL: 'https://test.nightscout.fi/tpdata',
-    BLIP_URL: 'https://test.nightscout.fi/'
-  },
-  NSIntegration: {
-    API_URL: 'https://test.nightscout.fi/tpapi',
-    UPLOAD_URL: 'https://test.nightscout.fi/tpupload',
-    DATA_URL: 'https://test.nightscout.fi/tpdata',
-    BLIP_URL: 'https://test.nightscout.fi/'
-  },
-  NSProduction: {
-    API_URL: 'https://connect.nightscout.fi/tpapi',
-    UPLOAD_URL: 'https://connect.nightscout.fi/tpupload',
-    DATA_URL: 'https://connect.nightscout.fi/tpdata',
-    BLIP_URL: 'https://connect.nightscout.fi/'
+    API_URL: 'https://ddc-api.charite.de',
+    UPLOAD_URL: 'https://ddc-upload.charite.de',
+    DATA_URL: 'https://ddc-api.charite.de/dataservices',
+    BLIP_URL: 'https://ddc.charite.de'
   }
 };
 
