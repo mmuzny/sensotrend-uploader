@@ -87,13 +87,17 @@ const serverdata = {
     DATA_URL: 'https://int-api.tidepool.org/dataservices',
     BLIP_URL: 'https://int-app.tidepool.org'
   },
-  Production: {
+  ['Production (Charité Berlin)']: {
     API_URL: 'https://ddc-api.charite.de',
     UPLOAD_URL: 'https://ddc-upload.charite.de',
     DATA_URL: 'https://ddc-api.charite.de/dataservices',
     BLIP_URL: 'https://ddc.charite.de'
   }
 };
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 export class App extends Component {
   static propTypes = {
@@ -149,7 +153,18 @@ export class App extends Component {
           }
         });
       } else {
-        addServers(servers);
+        this.log('Got Tidepool servers', servers);
+        const tidepoolNamedServers = servers.map(s => ({
+          ...s,
+          name: `Tidepool ${
+            s.name
+            .replace('.tidepool.org', '')
+            .split('.')
+            .map(capitalizeFirstLetter)
+            .join(' ')
+          }`,
+        }));
+        addServers(tidepoolNamedServers);
       }
     });
 
