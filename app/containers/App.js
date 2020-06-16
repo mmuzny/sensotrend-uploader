@@ -144,6 +144,7 @@ export class App extends Component {
       }
     };
 
+    /*
     dns.resolveSrv('environments-srv.tidepool.org', (err, servers) => {
       if (err) {
         this.log(`DNS resolver error: ${err}. Retrying...`);
@@ -167,6 +168,7 @@ export class App extends Component {
         addServers(tidepoolNamedServers);
       }
     });
+    */
 
     window.addEventListener('contextmenu', this.handleContextMenu, false);
   }
