@@ -1,8 +1,8 @@
 {
-  "name": "charite-uploader",
-  "productName": "charite-uploader",
-  "version": "2.32.0-charite",
-  "description": "Charité Uploader",
+  "name": "sensotrend-uploader",
+  "productName": "Sensotrend Uploader",
+  "version": "2.32.2-charite",
+  "description": "Sensotrend Uploader for Charité",
   "main": "./main.prod.js",
   "author": {
     "name": "Sensotrend Oy",
