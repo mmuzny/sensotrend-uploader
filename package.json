@@ -1,7 +1,7 @@
 {
   "name": "sensotrend-uploader",
-  "version": "2.31.0",
-  "description": "Sensotrend Uploader",
+  "version": "2.32.0-charite",
+  "description": "Charité Uploader",
   "private": true,
   "main": "main.prod.js",
   "author": "Mikael Rinnetmäki",
@@ -90,8 +90,8 @@
   },
   "browserslist": "last 2 electron major versions",
   "build": {
-    "productName": "Sensotrend Uploader",
-    "appId": "com.sensotrend.SensotrendUploader",
+    "productName": "Charité Uploader",
+    "appId": "com.sensotrend.ChariteUploader",
     "directories": {
       "buildResources": "resources",
       "output": "release"
