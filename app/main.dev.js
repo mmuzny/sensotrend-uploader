@@ -420,7 +420,7 @@ operating system, as soon as possible.`,
           shell.openExternal('https://developer.tidepool.org/privacy-policy/');
         }
       }, {
-        label: 'About Sensotrend Uploader',
+        label: i18n.t('About Sensotrend Uploader'),
         click() {
           aboutDialog();
         }
@@ -549,8 +549,8 @@ app.on('activate', () => {
 });
 
 function setLanguage() {
-  if (process.env.I18N_ENABLED === 'true') {
-    let lng = app.getLocale();
+  if (true) {
+    let lng = 'fi'; // app.getLocale();
     // remove country in language locale
     if (_.includes(lng,'-'))
       lng = (_.split(lng,'-').length > 0) ? _.split(lng,'-')[0] : lng;
