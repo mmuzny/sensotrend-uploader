@@ -114,7 +114,7 @@ function createWindow() {
     if (osName() === 'Windows 7') {
       const options = {
         type: 'info',
-        title: 'Please update to a modern operating system',
+        title: 'Voisitko päivittää käyttöjärjestelmäsi',
         message:
           `Windows 7 won't be patched for any new viruses or security problems
 going forward.
@@ -198,15 +198,15 @@ operating system, as soon as possible.`,
       }, {
         type: 'separator'
       }, {
-        label: i18n.t('Hide Sensotrend Uploader'),
+        label: i18n.t('Piilota Sensotrend Uploader'),
         accelerator: 'Command+H',
         selector: 'hide:'
       }, {
-        label: i18n.t('Hide Others'),
+        label: i18n.t('Piilota muut'),
         accelerator: 'Command+Shift+H',
         selector: 'hideOtherApplications:'
       }, {
-        label: i18n.t('Show All'),
+        label: i18n.t('Näytä kaikki'),
         selector: 'unhideAllApplications:'
       }, {
         type: 'separator'
@@ -325,12 +325,12 @@ operating system, as soon as possible.`,
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('http://support.tidepool.org/');
+          shell.openExternal('mailto:support@sensotrend.com');
         }
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://developer.tidepool.org/privacy-policy/');
+          shell.openExternal('https://connect.sensotrend.fi/privacy');
         }
       }]
     }];
@@ -406,7 +406,7 @@ operating system, as soon as possible.`,
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('http://support.tidepool.org/');
+          shell.openExternal('mailto:support@sensotrend.com');
         }
       }, {
         label: i18n.t('Check for Updates'),
@@ -417,7 +417,7 @@ operating system, as soon as possible.`,
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://developer.tidepool.org/privacy-policy/');
+          shell.openExternal('https://connect.sensotrend.fi/privacy');
         }
       }, {
         label: i18n.t('About Sensotrend Uploader'),
@@ -533,8 +533,8 @@ ipcMain.on('autoUpdater', (event, arg) => {
   autoUpdater[arg]();
 });
 
-if(!app.isDefaultProtocolClient('tidepoolupload')){
-  app.setAsDefaultProtocolClient('tidepoolupload');
+if(!app.isDefaultProtocolClient('sensotrendupload')){
+  app.setAsDefaultProtocolClient('sensotrendupload');
 }
 
 app.on('window-all-closed', () => {
