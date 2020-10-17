@@ -1,10 +1,10 @@
 {
-  "name": "sensotrend-uploader",
-  "version": "2.33.0",
-  "description": "Sensotrend Uploader",
+  "name": "sensotrend-uploader-test",
+  "version": "2.33.0-beta",
+  "description": "Sensotrend Uploader TEST",
   "private": true,
   "main": "main.prod.js",
-  "author": "Mikael Rinnetmäki",
+  "author": "Sensotrend Oy",
   "license": "BSD-2-Clause",
   "repository": "Sensotrend/sensotrend-uploader",
   "scripts": {
