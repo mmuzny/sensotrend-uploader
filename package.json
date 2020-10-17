@@ -92,8 +92,8 @@
   },
   "browserslist": "last 2 electron major versions",
   "build": {
-    "productName": "Sensotrend Uploader",
-    "appId": "com.sensotrend.SensotrendUploader",
+    "productName": "Sensotrend Uploader TEST",
+    "appId": "com.sensotrend.UploaderTest",
     "directories": {
       "buildResources": "resources",
       "output": "release"
