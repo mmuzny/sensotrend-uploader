@@ -1,3 +1,5 @@
+const child_process = require('child_process');
+
 const config = {
   publish: [
       'github'
@@ -93,33 +95,71 @@ const config = {
       },
       'dir'
     ]
+  },
+  linux: {
+    target: ['AppImage'],
+    category: 'Utility',
   }
 };
 
-console.log('CIRCLE_TAG:', process.env.CIRCLE_TAG);
-console.log('APPVEYOR_REPO_TAG:', process.env.APPVEYOR_REPO_TAG);
-
-if ( (process.env.CIRCLE_TAG && process.env.CIRCLE_TAG.length > 0) ||
-     (process.env.APPVEYOR_REPO_TAG_NAME && process.env.APPVEYOR_REPO_TAG_NAME.length > 0) ) {
-  let releaseType = null;
-
-  if ( (process.env.CIRCLE_TAG && process.env.CIRCLE_TAG.indexOf('-') !== -1) ||
-       (process.env.APPVEYOR_REPO_TAG_NAME && process.env.APPVEYOR_REPO_TAG_NAME.indexOf('-') !== -1) ) {
-    // non-production releases have hyphens in their tags
-    releaseType = 'pre-release';
-  } else {
-    releaseType = 'release';
+function resolveReleaseType() {
+  const gitResult = child_process.spawnSync('git', ['describe', '--tags'], {
+    shell: true,
+    stdio: [
+      'ignore',
+      'pipe',
+      'inherit',
+    ],
+    timeout: 2000,
+  });
+  if (gitResult.status !== 0 || gitResult.error) {
+    throw new Error('git describe failed: ' +
+      (gitResult.error || gitResult.status));
   }
 
+  const tagStdout = gitResult.stdout.toString().trim();
+  const tagPattern = /^(.+?)(-\w+?)?(-\d+-g\w+)?$/;
+  const tagDetails = tagPattern.exec(tagStdout);
+  if (tagDetails === null) {
+    throw new Error('Couldn\'t parse tag: ' + tagStdout);
+  }
+
+  let channel;
+  let logSuffix = '';
+  if (tagDetails[3]) {
+    channel = 'snapshot';
+    logSuffix = ', detail=' + tagDetails[3].substring(1);
+  } else if (tagDetails[2]) {
+    channel = tagDetails[2].substring(1);
+  } else {
+    channel = 'unknown';
+  }
+
+  const tagVersion = tagDetails[1].trim();
+  console.info(' * Release: tag version=' + tagVersion +
+    ', channel=' + channel + logSuffix);
+
+  const pkg = require('./package.json');
+  if (channel !== 'snapshot') {
+    if (pkg.version !== tagVersion) {
+      throw new Error(' ** Package.json and tag version differ: '
+        + pkg.version + ' != ' + tagVersion);
+    }
+  } else if (pkg.version.indexOf('snapshot') === -1) {
+    throw new Error(' ** Package.json version must contain' +
+      ' text "snapshot" for snapshot packaging.');
+  }
+  return channel;
+}
+
+const channel = resolveReleaseType();
+
+if (channel !== 'unknown') {
   config.publish = [
     {
-      provider: 'github',
-      owner: 'tidepool-org', // required to overwrite existing binaries
-      releaseType: releaseType,
-    },
-    {
-      provider: 's3',
-      bucket: 'downloads.tidepool.org',
+      provider: 'generic',
+      url: 'https://www.sensotrend.fi/download/uploader/update/${os}/',
+      channel: channel,
     },
   ];
 }
