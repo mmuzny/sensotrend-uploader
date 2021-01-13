@@ -2,8 +2,8 @@ const config = {
   publish: [
       'github'
   ],
-  productName: 'Sensotrend Uploader',
-  appId: 'org.sensotrend.SensotrendUploader',
+  productName: 'Sensotrend Uploader DEV',
+  appId: 'org.sensotrend.SensotrendUploaderDev',
   directories: {
     buildResources: 'resources',
     output: 'release'
