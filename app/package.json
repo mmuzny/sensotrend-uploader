@@ -1,7 +1,5 @@
 {
   "name": "sensotrend-uploader",
-  "productName": "sensotrend-uploader",
-  "version": "2.34.3-alpha",
   "description": "Sensotrend Uploader",
   "main": "./main.prod.js",
   "author": {

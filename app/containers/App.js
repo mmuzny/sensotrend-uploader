@@ -167,6 +167,7 @@ export class App extends Component {
   };
 
   render() {
+    document.title = config.title;
     return (
       <div className={styles.app} onClick={this.handleDismissDropdown}>
         <Header location={this.props.location} />

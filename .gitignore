@@ -52,3 +52,5 @@ _book/
 web/
 
 \.vscode/
+
+.run-with-version.json
