@@ -34,6 +34,7 @@ import config from '../../lib/config.js';
 import carelink from '../../lib/core/carelink.js';
 import device from '../../lib/core/device.js';
 import localStore from '../../lib/core/localStore.js';
+import {environments as serverdata} from '../../lib/environments';
 
 import actions from '../actions/';
 const asyncActions = actions.async;
@@ -61,39 +62,6 @@ import DeviceTimeModal from '../components/DeviceTimeModal';
 import AdHocModal from '../components/AdHocModal';
 
 import styles from '../../styles/components/App.module.less';
-
-const serverdata = {
-  Local: {
-    API_URL: 'http://localhost:1300/tpapi',
-    UPLOAD_URL: 'http://localhost:1300/tpupload',
-    DATA_URL: 'http://localhost:1300/tpdata',
-    BLIP_URL: 'https://localhost:8443/api'
-  },
-  Development: {
-    API_URL: 'https://dev-connect.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://dev-connect.sensotrend.fi/tpupload',
-    DATA_URL: 'https://dev-connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://dev.sensotrend.fi/api'
-  },
-  Staging: {
-    API_URL: 'https://test-connect.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://test-connect.sensotrend.fi/tpupload',
-    DATA_URL: 'https://test-connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://test.sensotrend.fi/api'
-  },
-  Integration: {
-    API_URL: 'https://test-connect.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://test-connect.sensotrend.fi/tpupload',
-    DATA_URL: 'https://test-connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://test.sensotrend.fi/api'
-  },
-  Production: {
-    API_URL: 'https://connect.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://connect.sensotrend.fi/tpupload',
-    DATA_URL: 'https://connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://www.sensotrend.fi/api'
-  }
-};
 
 export class App extends Component {
   static propTypes = {
