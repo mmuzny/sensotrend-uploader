@@ -12,6 +12,8 @@ const productionPlugins = [
   require('babel-plugin-transform-react-remove-prop-types')
 ];
 
+const environments = require('./environment.config');
+
 module.exports = api => {
   const development = api.env(developmentEnvironments);
   api.cache.never();
@@ -70,7 +72,10 @@ module.exports = api => {
           [
             require('babel-plugin-transform-define'),
             {
-              '__VERSION_SHA__': 'abcd'
+              '__VERSION_SHA__': 'abcd',
+              'process.env._defaultEnvironment':
+              process.env.DEFAULT_ENVIRONMENT ||
+                environments.envConfig.defaultEnv,
             }
           ],
         ]

@@ -73,7 +73,7 @@ export class App extends Component {
   constructor(props) {
     super(props);
     this.log = bows('App');
-    const initial_server = _.findKey(serverdata, (key) => key.BLIP_URL === config.BLIP_URL);
+    const initial_server = config.ENVIRONMENT;
     this.state = {
       server: initial_server
     };

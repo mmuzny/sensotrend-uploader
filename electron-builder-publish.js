@@ -1,6 +1,7 @@
 const versionHelper = require('./scripts/run-with-version');
 // Values in package.json are not read, so import explicitly.
 const pkg = require('./package.json');
+const environments = require('./environment.config');
 
 const config = {
   publish: [
@@ -105,16 +106,25 @@ const config = {
   }
 };
 
-const {channel} = versionHelper.resolveVersion();
+const environment = environments.envConfig;
+const envAddress = environment.updateURL;
+console.log(`Environment: ${environments.environment},` +
+  ` update address: ${envAddress}`);
 
-if (channel !== 'unknown') {
+if (envAddress) {
+  const {channel} = versionHelper.resolveVersion();
   config.publish = [
     {
       provider: 'generic',
-      url: 'https://www.sensotrend.fi/download/uploader/update/${os}/',
+      url: envAddress,
       channel: channel,
     },
   ];
+} else {
+  // eslint-disable-next-line
+  const allowed = Object.keys(UPDATE_ADDRESSES).join(', ');
+  throw new Error(`Environment ${environment} not defined.` +
+   ` Allowed values are: ${allowed}.`);
 }
 
 module.exports = config;
