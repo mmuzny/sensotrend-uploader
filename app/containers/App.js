@@ -70,28 +70,28 @@ const serverdata = {
     BLIP_URL: 'https://localhost:8443/api'
   },
   Development: {
-    API_URL: 'https://dev-connect.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://dev-connect.sensotrend.fi/tpupload',
-    DATA_URL: 'https://dev-connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://dev.sensotrend.fi/api'
+    API_URL: 'https://poolpraxdev2.sensotrend.com/tpapi',
+    UPLOAD_URL: 'https://poolpraxdev2.sensotrend.com/tpupload',
+    DATA_URL: 'https://poolpraxdev2.sensotrend.com/tpdata',
+    BLIP_URL: 'https://poolpraxdev1.sensotrend.com/api'
   },
   Staging: {
-    API_URL: 'https://test-connect.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://test-connect.sensotrend.fi/tpupload',
-    DATA_URL: 'https://test-connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://test.sensotrend.fi/api'
+    API_URL: 'https://poolpraxdev2.sensotrend.com/tpapi',
+    UPLOAD_URL: 'https://poolpraxdev2.sensotrend.com/tpupload',
+    DATA_URL: 'https://poolpraxdev2.sensotrend.com/tpdata',
+    BLIP_URL: 'https://poolpraxdev1.sensotrend.com/api'
   },
   Integration: {
-    API_URL: 'https://test-connect.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://test-connect.sensotrend.fi/tpupload',
-    DATA_URL: 'https://test-connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://test.sensotrend.fi/api'
+    API_URL: 'https://poolpraxdev2.sensotrend.com/tpapi',
+    UPLOAD_URL: 'https://poolpraxdev2.sensotrend.com/tpupload',
+    DATA_URL: 'https://poolpraxdev2.sensotrend.com/tpdata',
+    BLIP_URL: 'https://poolpraxdev1.sensotrend.com/api'
   },
   Production: {
-    API_URL: 'https://connect.sensotrend.fi/tpapi',
-    UPLOAD_URL: 'https://connect.sensotrend.fi/tpupload',
-    DATA_URL: 'https://connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://www.sensotrend.fi/api'
+    API_URL: 'https://poolpraxdev2.sensotrend.com/tpapi',
+    UPLOAD_URL: 'https://poolpraxdev2.sensotrend.com/tpupload',
+    DATA_URL: 'https://poolpraxdev2.sensotrend.com/tpdata',
+    BLIP_URL: 'https://poolpraxdev1.sensotrend.com/api'
   }
 };
 

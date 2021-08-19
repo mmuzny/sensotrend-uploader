@@ -1,8 +1,8 @@
 {
-  "name": "sensotrend-uploader",
-  "productName": "sensotrend-uploader",
+  "name": "diabetes-dossier-ch-uploader",
+  "productName": "diabetes-dossier-ch-uploader",
   "version": "2.37.1",
-  "description": "Sensotrend Uploader",
+  "description": "diabetes-dossier.ch Uploader",
   "main": "./main.prod.js",
   "author": {
     "name": "Sensotrend Oy",
