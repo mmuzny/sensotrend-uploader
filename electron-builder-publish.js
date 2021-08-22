@@ -2,7 +2,7 @@ const config = {
   publish: [
     {
       provider: 'generic',
-      url: 'https://www.sensotrend.fi/download/uploader/update/${os}',
+      url: 'https://my.diabetes-dossier.ch/download/uploader/update/${os}',
       channel: 'latest',
       useMultipleRangeRequest: false
     },

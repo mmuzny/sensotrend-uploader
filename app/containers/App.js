@@ -76,22 +76,22 @@ const serverdata = {
     BLIP_URL: 'https://poolpraxdev1.sensotrend.com/api'
   },
   Staging: {
-    API_URL: 'https://poolpraxdev2.sensotrend.com/tpapi',
-    UPLOAD_URL: 'https://poolpraxdev2.sensotrend.com/tpupload',
-    DATA_URL: 'https://poolpraxdev2.sensotrend.com/tpdata',
-    BLIP_URL: 'https://poolpraxdev1.sensotrend.com/api'
+    API_URL: 'https://my-uat.diabetes-dossier.ch/connect/tpapi',
+    UPLOAD_URL: 'https://my-uat.diabetes-dossier.ch/connect/tpupload',
+    DATA_URL: 'https://my-uat.diabetes-dossier.ch/connect/tpdata',
+    BLIP_URL: 'https://my-uat.diabetes-dossier.ch/api',
   },
   Integration: {
-    API_URL: 'https://poolpraxdev2.sensotrend.com/tpapi',
-    UPLOAD_URL: 'https://poolpraxdev2.sensotrend.com/tpupload',
-    DATA_URL: 'https://poolpraxdev2.sensotrend.com/tpdata',
-    BLIP_URL: 'https://poolpraxdev1.sensotrend.com/api'
+    API_URL: 'https://my-uat.diabetes-dossier.ch/connect/tpapi',
+    UPLOAD_URL: 'https://my-uat.diabetes-dossier.ch/connect/tpupload',
+    DATA_URL: 'https://my-uat.diabetes-dossier.ch/connect/tpdata',
+    BLIP_URL: 'https://my-uat.diabetes-dossier.ch/api',
   },
   Production: {
-    API_URL: 'https://poolpraxdev2.sensotrend.com/tpapi',
-    UPLOAD_URL: 'https://poolpraxdev2.sensotrend.com/tpupload',
-    DATA_URL: 'https://poolpraxdev2.sensotrend.com/tpdata',
-    BLIP_URL: 'https://poolpraxdev1.sensotrend.com/api'
+    API_URL: 'https://my.diabetes-dossier.ch/connect/tpapi',
+    UPLOAD_URL: 'https://my.diabetes-dossier.ch/connect/tpupload',
+    DATA_URL: 'https://my.diabetes-dossier.ch/connect/tpdata',
+    BLIP_URL: 'https://my.diabetes-dossier.ch/api',
   }
 };
 

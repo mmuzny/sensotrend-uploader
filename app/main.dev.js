@@ -325,12 +325,12 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/instructions/uploader');
+          shell.openExternal('https://www.diabetes-dossier.ch/faq');
         }
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/privacy/');
+          shell.openExternal('https://www.diabetes-dossier.ch/datenschutz');
         }
       }]
     }];
@@ -406,7 +406,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/instructions/uploader');
+          shell.openExternal('https://www.diabetes-dossier.ch/faq');
         }
       }, {
         label: i18n.t('Check for Updates'),
@@ -417,7 +417,7 @@ operating system, as soon as possible.`),
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
-          shell.openExternal('https://www.sensotrend.fi/connect/privacy/');
+          shell.openExternal('https://www.diabetes-dossier.ch/datenschutz');
         }
       }, {
         label: i18n.t('About Tidepool Uploader'),
