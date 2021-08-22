@@ -31,7 +31,7 @@ import * as actionSources from '../constants/actionSources';
 import { pages, pagesMap } from '../constants/otherConstants';
 
 import styles from '../../styles/components/Header.module.less';
-import logo from '../../images/Tidepool_Logo_Light x2.png';
+import logo from '../../images/poolprax/diabetes_dossier_logo_quer_rgb.svg';
 
 import { remote } from 'electron';
 const i18n = remote.getGlobal( 'i18n' );

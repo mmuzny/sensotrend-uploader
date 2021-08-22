@@ -22,7 +22,7 @@ import os from 'os';
 import osName from 'os-name';
 
 import styles from '../../styles/components/Footer.module.less';
-import logo from '../../images/JDRF_Reverse_Logo x2.png';
+// import logo from '../../images/JDRF_Reverse_Logo x2.png';
 import debugMode from '../utils/debugMode';
 
 import { remote } from 'electron';
@@ -47,13 +47,13 @@ export default class Footer extends Component {
       <div className={styles.footer}>
         <div className={styles.footerRow}>
           <div className={styles.el1}>
-            <a className={styles.footerLink} href="https://www.sensotrend.fi/connect/instructions/uploader" target="_blank">{i18n.t('Get Support')}</a>
+            <a className={styles.footerLink} href="https://www.diabetes-dossier.ch/faq" target="_blank">{i18n.t('Get Support')}</a>
           </div>
           <div className={styles.el2}>
-            <a className={styles.footerLink} href="https://www.sensotrend.fi/connect/privacy/" target="_blank">{i18n.t('Privacy')}</a>
+            <a className={styles.footerLink} href="https://www.diabetes-dossier.ch/datenschutz" target="_blank">{i18n.t('Privacy')}</a>
           </div>
           <div className={styles.el3}>
-            <a className={styles.footerLink} href="https://www.sensotrend.fi/connect/eula/" target="_blank">{i18n.t('Terms of Use')}</a>
+            <a className={styles.footerLink} href="https://www.diabetes-dossier.ch/impressum" target="_blank">{i18n.t('Terms of Use')}</a>
           </div>
           {/*
           <div className={styles.jdrfContainer}>
