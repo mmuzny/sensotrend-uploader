@@ -1,7 +1,7 @@
 {
-  "name": "diabetes-dossier-ch-uploaderr",
+  "name": "diabetes-dossier-ch-uat-uploaderr",
   "version": "2.38.0",
-  "description": "diabetes-dossier.ch Uploader",
+  "description": "diabetes-dossier.ch UAT Uploader",
   "private": true,
   "main": "main.prod.js",
   "author": "Mikael Rinnetmäki",
