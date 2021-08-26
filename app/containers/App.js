@@ -26,7 +26,7 @@ import { Route, Switch } from 'react-router-dom';
 import dns from 'dns';
 
 const { getCurrentWindow, Menu } = remote;
-const i18n = remote.getGlobal( 'i18n' );
+const i18n = remote.getGlobal('i18n');
 import i18nextOptions from '../utils/config.i18next';
 import localeNames from '../utils/locales.json';
 
@@ -67,45 +67,44 @@ import styles from '../../styles/components/App.module.less';
 
 const serverdata = {
   Local: {
-    API_URL: 'http://localhost:1300/tpapi',
-    UPLOAD_URL: 'http://localhost:1300/tpupload',
-    DATA_URL: 'http://localhost:1300/tpdata',
-    BLIP_URL: 'https://localhost:8443/api'
+    API_URL: 'https://localhost:1300/tpapi',
+    UPLOAD_URL: 'https://localhost:1300/tpupload',
+    DATA_URL: 'https://localhost:1300/tpdata',
+    BLIP_URL: 'https://localhost:8443/api',
   },
   Development: {
     API_URL: 'https://dev-connect.sensotrend.fi/tpapi',
     UPLOAD_URL: 'https://dev-connect.sensotrend.fi/tpupload',
     DATA_URL: 'https://dev-connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://dev.sensotrend.fi/api'
+    BLIP_URL: 'https://dev.sensotrend.fi/api',
   },
   Staging: {
     API_URL: 'https://test-connect.sensotrend.fi/tpapi',
     UPLOAD_URL: 'https://test-connect.sensotrend.fi/tpupload',
     DATA_URL: 'https://test-connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://test.sensotrend.fi/api'
+    BLIP_URL: 'https://test.sensotrend.fi/api',
   },
   Integration: {
     API_URL: 'https://test-connect.sensotrend.fi/tpapi',
     UPLOAD_URL: 'https://test-connect.sensotrend.fi/tpupload',
     DATA_URL: 'https://test-connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://test.sensotrend.fi/api'
+    BLIP_URL: 'https://test.sensotrend.fi/api',
   },
   Production: {
     API_URL: 'https://connect.sensotrend.fi/tpapi',
     UPLOAD_URL: 'https://connect.sensotrend.fi/tpupload',
     DATA_URL: 'https://connect.sensotrend.fi/tpdata',
-    BLIP_URL: 'https://www.sensotrend.fi/api'
-  }
+    BLIP_URL: 'https://www.sensotrend.fi/api',
+  },
 };
-
 
 const availableLanguages = i18nextOptions.supportedLngs;
 
 export class App extends Component {
   static propTypes = {
     route: PropTypes.shape({
-      api: PropTypes.func.isRequired
-    }).isRequired
+      api: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
   constructor(props) {
@@ -113,20 +112,19 @@ export class App extends Component {
     this.log = bows('App');
     const initial_server = _.findKey(serverdata, (key) => key.BLIP_URL === config.BLIP_URL);
     this.state = {
-      server: initial_server
+      server: initial_server,
     };
   }
 
-  UNSAFE_componentWillMount(){
+  UNSAFE_componentWillMount() {
     checkVersion(this.props.dispatch);
     let api = this.props.api;
-    this.props.async.doAppInit(
-      _.assign({ environment: this.state.server }, config), {
+    this.props.async.doAppInit(_.assign({ environment: this.state.server }, config), {
       api: api,
       carelink,
       device,
       localStore,
-      log: this.log
+      log: this.log,
     });
 
     const addServers = (servers) => {
@@ -164,12 +162,12 @@ export class App extends Component {
     window.addEventListener('contextmenu', this.handleContextMenu, false);
   }
 
-  setServer = info => {
+  setServer = (info) => {
     console.log('will use', info.label, 'server');
     var serverinfo = serverdata[info.label];
     serverinfo.environment = info.label;
     this.props.api.setHosts(serverinfo);
-    this.setState({server: info.label});
+    this.setState({ server: info.label });
   };
 
   render() {
@@ -178,12 +176,12 @@ export class App extends Component {
         <Header location={this.props.location} />
         <Switch>
           <Route exact strict path="/" component={Loading} />
-          <Route path="/login" component={Login}/>
-          <Route path="/main" component={MainPage}/>
-          <Route path="/settings" component={SettingsPage}/>
-          <Route path="/clinic_user_select" component={ClinicUserSelectPage}/>
-          <Route path="/clinic_user_edit" component={ClinicUserEditPage}/>
-          <Route path="/no_upload_targets" component={NoUploadTargetsPage}/>
+          <Route path="/login" component={Login} />
+          <Route path="/main" component={MainPage} />
+          <Route path="/settings" component={SettingsPage} />
+          <Route path="/clinic_user_select" component={ClinicUserSelectPage} />
+          <Route path="/clinic_user_edit" component={ClinicUserEditPage} />
+          <Route path="/no_upload_targets" component={NoUploadTargetsPage} />
         </Switch>
         <Footer version={config.version} environment={this.state.server} />
         {/* VersionCheck as overlay */}
@@ -196,7 +194,7 @@ export class App extends Component {
     );
   }
 
-  handleContextMenu = e => {
+  handleContextMenu = (e) => {
     e.preventDefault();
     const { clientX, clientY } = e;
     let template = [];
@@ -205,10 +203,10 @@ export class App extends Component {
         label: 'Inspect element',
         click() {
           remote.getCurrentWindow().inspectElement(clientX, clientY);
-        }
+        },
       });
       template.push({
-        type: 'separator'
+        type: 'separator',
       });
     }
     if (this.props.location.pathname === pagesMap.LOGIN) {
@@ -218,7 +216,7 @@ export class App extends Component {
           label: server,
           click: this.setServer,
           type: 'radio',
-          checked: this.state.server === server
+          checked: this.state.server === server,
         });
       }
       template.push({
@@ -231,26 +229,27 @@ export class App extends Component {
         checked: debugMode.isDebug,
         click() {
           debugMode.setDebug(!debugMode.isDebug);
-        }
+        },
       });
     }
     if (availableLanguages.length > 0) {
       // Build the language submenu
       template.push({
         label: 'Change language',
-        submenu: availableLanguages.map(locale => ({
+        submenu: availableLanguages.map((locale) => ({
           label: `${localeNames[locale]} (${locale})`,
           click() {
-            i18n.changeLanguage(locale)
-            .then((t) => {
-              console.log('New language', i18n.language, t('Done'));
-              getCurrentWindow().reload();              
-            })
-            .catch(console.error);
+            i18n
+              .changeLanguage(locale)
+              .then((t) => {
+                console.log('New language', i18n.language, t('Done'));
+                getCurrentWindow().reload();
+              })
+              .catch(console.error);
           },
           type: 'radio',
-          checked: i18n.language === locale
-        }))
+          checked: i18n.language === locale,
+        })),
       });
     }
 
@@ -272,14 +271,10 @@ export class App extends Component {
       return null;
     }
     if (unsupported instanceof Error) {
-      return (
-        <VersionCheckError errorMessage={unsupported.message || 'Unknown error'}/>
-      );
+      return <VersionCheckError errorMessage={unsupported.message || 'Unknown error'} />;
     }
     if (unsupported === true) {
-      return (
-        <UpdatePlease knowledgeBaseLink={urls.HOW_TO_UPDATE_KB_ARTICLE} />
-      );
+      return <UpdatePlease knowledgeBaseLink={urls.HOW_TO_UPDATE_KB_ARTICLE} />;
     }
   }
 }
@@ -293,16 +288,15 @@ export default connect(
       dropdown: state.dropdown,
       unsupported: state.unsupported,
       // derived state
-      readyToRenderVersionCheckOverlay: (
-        !state.working.initializingApp && !state.working.checkingVersion
-      )
+      readyToRenderVersionCheckOverlay:
+        !state.working.initializingApp && !state.working.checkingVersion,
     };
   },
   (dispatch) => {
     return {
       async: bindActionCreators(asyncActions, dispatch),
       sync: bindActionCreators(syncActions, dispatch),
-      dispatch: dispatch
+      dispatch: dispatch,
     };
   }
 )(App);
