@@ -7,8 +7,8 @@ const config = {
       useMultipleRangeRequest: false
     },
   ],
-  productName: 'diabetesdossier.ch Uploader',
-  appId: 'com.sensotrend.DiabetesDossierUploader',
+  productName: 'diabetes-dossier.ch Uploader',
+  appId: 'ch.diabetes-dossier.DiabetesDossierUploader',
   directories: {
     buildResources: 'resources',
     output: 'release'
