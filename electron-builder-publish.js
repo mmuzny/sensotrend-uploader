@@ -8,7 +8,7 @@ const config = {
     },
   ],
   productName: 'diabetesdossier.ch UAT Uploader',
-  appId: 'com.sensotrend.DiabetesDossierUATUploader',
+  appId: 'ch.diabetes-dossier.DiabetesDossierUATUploader',
   directories: {
     buildResources: 'resources',
     output: 'release'
