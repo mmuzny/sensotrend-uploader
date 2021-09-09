@@ -1,6 +1,6 @@
 {
   "name": "sensotrend-uploader-dev",
-  "version": "2.36.3",
+  "version": "2.38.0",
   "description": "Sensotrend Uploader DEV",
   "private": true,
   "main": "main.prod.js",
@@ -63,9 +63,8 @@
     "identity-obj-proxy": "3.0.0",
     "immutability-helper": "3.1.1",
     "is-electron": "2.2.0",
-    "lodash": "4.17.20",
-    "lzo-decompress": "1.0.1",
-    "node-powershell": "4.0.0",
+    "lodash": "4.17.21",
+    "lzo-wasm": "0.0.4",
     "os-name": "3.1.0",
     "pl2303": "0.0.5",
     "plist": "3.0.1",
@@ -88,7 +87,8 @@
     "sundial": "1.6.0",
     "tidepool-platform-client": "0.44.0",
     "usb-cdc-acm": "0.1.1",
-    "uuid": "7.0.3"
+    "uuid": "7.0.3",
+    "webmtp": "0.1.0"
   },
   "browserslist": "last 2 electron major versions",
   "bin": {

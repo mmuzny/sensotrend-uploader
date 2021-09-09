@@ -91,7 +91,7 @@ function addDataPeriodGlobalListener(menu) {
 };
 
 app.on('ready', async () => {
-  // await installExtensions();
+  await installExtensions();
   setLanguage();
 });
 
@@ -126,9 +126,6 @@ operating system, as soon as possible.`),
       };
       await dialog.showMessageBox(options);
     }
-
-    // Make the language known to renderer.
-    mainWindow.webContents.send('setLanguage', i18nextOptions['lng']);
 
     mainWindow.show();
     mainWindow.focus();
