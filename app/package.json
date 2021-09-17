@@ -19,5 +19,8 @@
   },
   "optionalDependencies": {
     "winreg": "1.2.4"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^3.2.3"
   }
 }
