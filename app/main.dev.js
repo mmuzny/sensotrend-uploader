@@ -324,11 +324,13 @@ operating system, as soon as possible.`),
         click() {
           shell.openExternal('https://www.diabetes-dossier.ch/faq');
         }
+        /*
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
           shell.openExternal('https://www.diabetes-dossier.ch/datenschutz');
         }
+        */
       }]
     }];
 
@@ -411,11 +413,13 @@ operating system, as soon as possible.`),
           manualCheck = true;
           autoUpdater.checkForUpdates();
         }
+        /*
       }, {
         label: i18n.t('Privacy Policy'),
         click() {
           shell.openExternal('https://www.diabetes-dossier.ch/datenschutz');
         }
+        */
       }, {
         label: i18n.t('About Tidepool Uploader'),
         click() {

@@ -49,11 +49,13 @@ export default class Footer extends Component {
           <div className={styles.el1}>
             <a className={styles.footerLink} href="https://www.diabetes-dossier.ch/faq" target="_blank">{i18n.t('Get Support')}</a>
           </div>
+          {/*
           <div className={styles.el2}>
-            <a className={styles.footerLink} href="https://www.diabetes-dossier.ch/datenschutz" target="_blank">{i18n.t('Privacy')}</a>
+            <a className={styles.footerLink} href="https://my.diabetes-dossier.ch/dashboard/eula" target="_blank">{i18n.t('Privacy')}</a>
           </div>
+          */}
           <div className={styles.el3}>
-            <a className={styles.footerLink} href="https://www.diabetes-dossier.ch/impressum" target="_blank">{i18n.t('Terms of Use')}</a>
+            <a className={styles.footerLink} href="https://my.diabetes-dossier.ch/dashboard/eula" target="_blank">{i18n.t('Terms of Use')}</a>
           </div>
           {/*
           <div className={styles.jdrfContainer}>
