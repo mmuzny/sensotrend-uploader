@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; style-src 'unsafe-inline'; style-src-elem 'unsafe-inline' 'self'; script-src 'unsafe-inline'; font-src data: 'self'; ">
-  <title>Tietoja sovelluksesta</title>
+  <title>Über diabetes-dossier.ch Uploader</title>
   <link rel="stylesheet" href="./dist/style.css" />
   <style type="text/css">
     body {
@@ -38,6 +38,10 @@
 
     h4 {
       margin-block-start: 2em;
+    }
+
+    h4 + h4 {
+      margin-top: -1em;
     }
 
     #license pre {
@@ -96,12 +100,12 @@
         const main = document.querySelector("#main");
         if (license.classList.contains("top")) {
           license.classList.remove("top");
-          license.querySelector("button").textContent = "Näytä lisenssi";
+          license.querySelector("button").textContent = "Lizenz anzeigen";
           license.setAttribute("aria-hidden", "true");
           main.setAttribute("aria-hidden", "false");
         } else {
           license.classList.add("top");
-          license.querySelector("button").textContent = "Piilota lisenssi";
+          license.querySelector("button").textContent = "Lizenz ausblenden";
           license.setAttribute("aria-hidden", "false");
           main.setAttribute("aria-hidden", "true");
         }
@@ -125,46 +129,46 @@
 
 <body>
   <header>
-    <img alt="" height="35" src="resources/sensotrend.svg">
+    <img alt="" height="35" src="resources/diabetes_dossier_logo_quer_rgb.svg">
   </header>
   <article id="main" aria-hidden="false">
     <h2>${description} <small>v${version}</small></h2>
+    <section id="credits">
+      <h4>diabetes-dossier.ch Uploader basiert auf <a href="https://www.tidepool.org/download#tidepool-uploader">Sensotrend Uploader</a>.</h4>
+      <h4>Sensotrend Uploader basiert auf <a href="https://www.tidepool.org/download#tidepool-uploader">Tidepool Universal Uploader</a>.</h4>
+      <p class="copyrights">${:copyrights}
+        <br />Geteilt unter Lizenz ${license}
+      </p>
+    </section>
     <section id="ce">
       <img alt="CE" src="resources/ce.svg" />
-      <p>Sensotrend Uploader on luokan I lääkinnällinen laite.</p>
-      <p>Ks. <a
-        href="https://www.sensotrend.fi/connect/static/media/DECO-T5-DC-MDD_EU_Declaration_of_Conformity_-_Sensotrend_Uploader_-_signed.17445413.pdf">Vaatimustenmukaisuusvakuutus</a>.</p>
+      <p>Sensotrend Uploader ist ein Medizinprodukt der Klasse I.<br />Siehe die <a
+        href="https://www.sensotrend.fi/connect/DECO-T5-DC-MDD_EU_Declaration_of_Conformity_-_Sensotrend_Uploader_-_signed.pdf">Konformitätserklärung</a>.</p>
     </section>
     <section id="device">
-      <img alt="Laitetunniste" title="Laitetunniste" src="resources/udi.png" />
-      <p>UDI-DI: D-FIMF000000500SU000001QT</p>
+      <img alt="UDI" title="Gerätekennung" src="resources/udi.png" />
+      <p>UDI-DI: D-FIMF000000500SUP000015I</p>
     </section>
     <section id="date">
-      <img alt="Valmistuspäivä" title="Valmistuspäivä" src="resources/manufacturingDate.png" />
+      <img alt="Herstellungsdatum" title="Herstellungsdatum" src="resources/manufacturingDate.png" />
       <time>${:date}</time>
     </section>
     <section id="manufacturer">
-      <img alt="Valmistaja" title="Valmistaja" src="resources/manufacturer.png" />
+      <img alt="Hersteller" title="Hersteller" src="resources/manufacturer.png" />
       <address>Sensotrend Oy<br />
         Tampellan esplanadi 19 A 55<br />
-        33180 Tampere<br />
-        <a href="mailto:tuki@sensotrend.com">tuki@sensotrend.com</a>
+        33180 Tampere, Finnland<br />
       </address>
     </section>
+    <!--
     <section id="info">
       <img alt="Lisätietoja" title="Lisätietoja" src="resources/website.png" />
       <p><a href="https://www.sensotrend.fi/uploader">https://www.sensotrend.fi/uploader</a></p>
     </section>
-    <section id="credits">
-      <h4>Pohjautuu <a href="https://www.tidepool.org/download#tidepool-uploader">Tidepool
-          Universal Uploaderiin</a>.</h4>
-      <p class="copyrights">${:copyrights}
-        <br />Jaettu lisenssillä ${license}
-      </p>
-    </section>
+    -->
   </article>
   <aside id="license" aria-hidden="true">
-    <button type="button" onclick="toggleLicense();">Näytä lisenssi</button>
+    <button type="button" onclick="toggleLicense();">Lizenz anzeigen</button>
     <pre>${:licenseFile}</pre>
   </aside>
 </body>
