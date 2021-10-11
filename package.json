@@ -1,6 +1,6 @@
 {
   "name": "diabetes-dossier-ch-uploaderr",
-  "version": "2.38.1",
+  "version": "2.38.1-a",
   "description": "diabetes-dossier.ch Uploader",
   "private": true,
   "main": "main.prod.js",
