@@ -322,7 +322,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://www.diabetes-dossier.ch/faq');
+          shell.openExternal('https://www.diabetes-dossier.ch/kontakt');
         }
         /*
       }, {
@@ -405,7 +405,7 @@ operating system, as soon as possible.`),
       submenu: [{
         label: i18n.t('Get Support'),
         click() {
-          shell.openExternal('https://www.diabetes-dossier.ch/faq');
+          shell.openExternal('https://www.diabetes-dossier.ch/kontakt');
         }
       }, {
         label: i18n.t('Check for Updates'),
@@ -534,8 +534,8 @@ ipcMain.on('autoUpdater', (event, arg) => {
   autoUpdater[arg]();
 });
 
-if(!app.isDefaultProtocolClient('sensotrendupload')){
-  app.setAsDefaultProtocolClient('sensotrendupload');
+if(!app.isDefaultProtocolClient('diabetesdossieruploader')){
+  app.setAsDefaultProtocolClient('diabetesdossieruploader');
 }
 
 app.on('window-all-closed', () => {
