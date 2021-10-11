@@ -534,8 +534,8 @@ ipcMain.on('autoUpdater', (event, arg) => {
   autoUpdater[arg]();
 });
 
-if(!app.isDefaultProtocolClient('diabetesdossieruploader')){
-  app.setAsDefaultProtocolClient('diabetesdossieruploader');
+if(!app.isDefaultProtocolClient('diabetesdossieruatuploader')){
+  app.setAsDefaultProtocolClient('diabetesdossieruatuploader');
 }
 
 app.on('window-all-closed', () => {
