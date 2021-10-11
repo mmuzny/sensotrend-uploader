@@ -534,8 +534,8 @@ ipcMain.on('autoUpdater', (event, arg) => {
   autoUpdater[arg]();
 });
 
-if(!app.isDefaultProtocolClient('sensotrendupload')){
-  app.setAsDefaultProtocolClient('sensotrendupload');
+if(!app.isDefaultProtocolClient('diabetesdossieruploader')){
+  app.setAsDefaultProtocolClient('diabetesdossieruploader');
 }
 
 app.on('window-all-closed', () => {
