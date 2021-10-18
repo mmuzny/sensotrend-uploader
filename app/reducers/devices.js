@@ -222,7 +222,7 @@ const devices = {
     key: 'accucheksmartpix',
     source: {type: 'device', driverId: 'AccuChekSmartPix'},
     enabled: {mac: true, win: true, linux: true},
-  },  
+  },
   tandem: {
     instructions: i18n.t('Plug in pump with micro-USB'),
     key: 'tandem',
