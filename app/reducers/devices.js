@@ -86,6 +86,8 @@ const devices = {
     key: 'caresensble',
     source: {type: 'device', driverId: 'BluetoothLE'},
     enabled: {mac: true, win: false, linux: true}
+    // PIN pairing for WebBluetooth is not currently supported on Windows 10:
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=960258
   },
   dexcom: {
     instructions: i18n.t('Plug in receiver with micro-USB'),
@@ -99,6 +101,7 @@ const devices = {
                     text: i18n.t('Plug in meter with cable and set meter to'),
                     linkText: i18n.t('PC Link Mode'),
                     link: 'https://support.tidepool.org/hc/en-us/articles/4402234174100',
+                    afterLink: i18n.t('afterLink', '')
                   },
     name: 'GLUCOCARD Expression',
     key: 'glucocardexpression',
@@ -171,6 +174,15 @@ const devices = {
     source: {type: 'device', driverId: 'OneTouchVerioIQ'},
     enabled: {mac: true, win: true, linux: true},
     powerOnlyWarning: true,
+  },
+  onetouchverioble: {
+    instructions: i18n.t('Turn meter on and make sure Bluetooth is switched on'),
+    name: 'OneTouch Verio Flex & Verio Reflect (with Bluetooth)',
+    key: 'onetouchverioble',
+    source: {type: 'device', driverId: 'OneTouchVerioBLE'},
+    enabled: {mac: true, win: false, linux: true}
+    // PIN pairing for WebBluetooth is not currently supported on Windows 10:
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=960258
   },
   onetouchultramini: {
     instructions: i18n.t('Plug in meter with cable and make sure the meter is switched off'),
