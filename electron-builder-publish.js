@@ -7,8 +7,8 @@ const config = {
       useMultipleRangeRequest: false
     },
   ],
-  productName: 'Sensotrend Uploader DEV',
-  appId: 'org.sensotrend.SensotrendUploaderDev',
+  productName: 'Sensotrend Uploader TEST',
+  appId: 'org.sensotrend.SensotrendUploaderTest',
   directories: {
     buildResources: 'resources',
     output: 'release'
