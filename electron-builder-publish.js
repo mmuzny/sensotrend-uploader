@@ -2,7 +2,7 @@ const config = {
   publish: [
     {
       provider: 'generic',
-      url: 'https://dev.sensotrend.fi/download/uploader/update/${os}',
+      url: 'https://test.sensotrend.fi/download/uploader/update/${os}',
       channel: 'latest',
       useMultipleRangeRequest: false
     },
