@@ -1,7 +1,7 @@
 {
-  "name": "sensotrend-uploader",
+  "name": "sensotrend-uploader-test",
   "version": "2.39.0-zoom",
-  "description": "Sensotrend Uploader",
+  "description": "Sensotrend Uploader TEST",
   "private": true,
   "main": "main.prod.js",
   "author": "Mikael Rinnetmäki",
