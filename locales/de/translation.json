@@ -33,6 +33,8 @@
   "&Exit": "&Verlassen",
   "&View": "&Aussicht",
   "&Reload": "&Neu laden",
+  "Zoom &In": "Ver&größern",
+  "Zoom &Out": "Ver&kleinern",
   "Toggle &Full Screen": "&Vollbild umschalten",
   "Toggle &Developer Tools": "Toggle &Entwicklertools",
   "Help": "Hilfe",
