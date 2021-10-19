@@ -96,13 +96,13 @@ app.on('ready', async () => {
 });
 
 function createWindow() {
-  const resizable = (process.env.NODE_ENV === 'development');
+  // const resizable = (process.env.NODE_ENV === 'development');
 
   mainWindow = new BrowserWindow({
     show: false,
     width: 663,
     height: 769,
-    resizable: resizable,
+    resizable: true,
     webPreferences: {
       nodeIntegration: true
     }
@@ -355,10 +355,12 @@ operating system, as soon as possible.`),
         }
       }, {
         role: 'zoomIn',
-        label: i18n.t('Zoom &In')
+        label: i18n.t('Zoom &In'),
+        accelerator: 'Ctrl+Plus'
       }, {
         role: 'zoomOut',
-        label: i18n.t('Zoom &Out')
+        label: i18n.t('Zoom &Out'),
+        accelerator: 'Ctrl+-'
       }, {
         label: i18n.t('Toggle &Full Screen'),
         accelerator: 'F11',
@@ -373,10 +375,12 @@ operating system, as soon as possible.`),
         }
       }] : [{
         role: 'zoomIn',
-        label: i18n.t('Zoom &In')
+        label: i18n.t('Zoom &In'),
+        accelerator: 'Ctrl+Plus'
       }, {
         role: 'zoomOut',
-        label: i18n.t('Zoom &Out')
+        label: i18n.t('Zoom &Out'),
+        accelerator: 'Ctrl+-'
       }, {
         label: i18n.t('Toggle &Full Screen'),
         accelerator: 'F11',
