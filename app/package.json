@@ -1,7 +1,7 @@
 {
   "name": "diabetes-dossier-ch-uploader",
   "productName": "diabetes-dossier-ch-uploader",
-  "version": "2.38.1-a",
+  "version": "2.39.0",
   "description": "diabetes-dossier.ch Uploader",
   "main": "./main.prod.js",
   "author": {
