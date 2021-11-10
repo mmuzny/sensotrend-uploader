@@ -1,6 +1,6 @@
 {
   "name": "sensotrend-uploader-test",
-  "productName": "sensotrend-uploader-test",
+  "version": "2.40.0-onetouch-select-plus-flex-eperm-write-error.1",
   "version": "2.39.0",
   "description": "Sensotrend Uploader TEST",
   "main": "./main.prod.js",
