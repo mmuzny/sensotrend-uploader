@@ -1,7 +1,7 @@
 {
   "name": "sensotrend-uploader-test",
   "productName": "sensotrend-uploader-test",
-  "version": "2.39.0-zoom",
+  "version": "2.39.0",
   "description": "Sensotrend Uploader TEST",
   "main": "./main.prod.js",
   "author": {
