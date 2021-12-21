@@ -1,7 +1,7 @@
 {
   "name": "sensotrend-uploader-test",
   "productName": "sensotrend-uploader-test",
-  "version": "2.39.0",
+  "version": "2.41.0",
   "description": "Sensotrend Uploader TEST",
   "main": "./main.prod.js",
   "author": {
@@ -19,8 +19,5 @@
   },
   "resolutions": {
     "@serialport/bindings": "9.0.7"
-  },
-  "optionalDependencies": {
-    "winreg": "1.2.4"
   }
 }
