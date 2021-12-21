@@ -354,12 +354,6 @@ operating system, as soon as possible.`),
           mainWindow.webContents.reload();
         }
       }, {
-        role: 'zoomIn',
-        label: i18n.t('Zoom &In')
-      }, {
-        role: 'zoomOut',
-        label: i18n.t('Zoom &Out')
-      }, {
         label: i18n.t('Toggle &Full Screen'),
         accelerator: 'F11',
         click() {
@@ -372,12 +366,6 @@ operating system, as soon as possible.`),
           mainWindow.toggleDevTools();
         }
       }] : [{
-        role: 'zoomIn',
-        label: i18n.t('Zoom &In')
-      }, {
-        role: 'zoomOut',
-        label: i18n.t('Zoom &Out')
-      }, {
         label: i18n.t('Toggle &Full Screen'),
         accelerator: 'F11',
         click() {
