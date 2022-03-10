@@ -2,7 +2,6 @@
 Installable uploader software, based on Tidepool's open source implementation
 
 
-
 [![CircleCI](https://circleci.com/gh/tidepool-org/uploader/tree/master.svg?style=shield)](https://circleci.com/gh/tidepool-org/uploader/tree/master)
 [![Build status](https://ci.appveyor.com/api/projects/status/jj71uykxm27s3mla/branch/master?svg=true)](https://ci.appveyor.com/project/krystophv/uploader/branch/master)
 
@@ -223,6 +222,8 @@ To package the app on your local machine, you need to set the `ROLLBAR_POST_TOKE
 
 macOS: To notarize the app so that it will run on macOS Mojave, you need to set the environment variables `APPLEID` and `APPLEIDPASS`. Note that you need to set an app-specific password in https://appleid.apple.com for this to work.
 
+Note that you'll need to build Windows builds on a Windows machine, and MacOS builds on a Mac.
+
 ## Further commands
 
 To run the application without packaging run
@@ -265,7 +266,7 @@ These libraries are used in the following Node.js modules created by Tidepool an
 
 The LGPL is intended to allow use of libraries in applications that don’t necessarily distribute the source of the application. The LGPL has two requirements:
 
-- users must have access to the source code of the library 
+- users must have access to the source code of the library
 - users can make use of modified versions of the library
 
 To satisfy (1) we provide links to the relevant code repositories. To satisfy (2) we dynamically link to the library, so that it’s possible to swap it out for another version of the library.
@@ -286,4 +287,3 @@ If your EULA claims ownership over the code, you have to explicitly mention that
 
 - [LGPL v3 License Text](https://www.gnu.org/licenses/lgpl.html) (on gnu.org)
 - [LGPL on Wikipedia](https://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License)
-

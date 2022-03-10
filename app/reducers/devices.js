@@ -1,20 +1,11 @@
 import mm723Image from '../../images/MM723_CNL_combo@2x.jpg';
 import mm600Image from '../../images/MM600_CNL_combo@2x.jpg';
+
 import { remote } from 'electron';
 
 const i18n = remote.getGlobal( 'i18n' );
 
 const devices = {
-  carelink: {
-    instructions: [i18n.t('Import from CareLink'), i18n.t('(We will not store your credentials)')],
-    isFetching: false,
-    key: 'carelink',
-    name: 'Medtronic',
-    // for the device selection list
-    selectName: 'Medtronic (CareLink import)',
-    source: {type: 'carelink'},
-    enabled: {mac: true, win: true, linux: true}
-  },
   abbottfreestylelibre: {
     instructions: i18n.t('Plug in meter with micro-USB cable'),
     key: 'abbottfreestylelibre',
@@ -37,6 +28,13 @@ const devices = {
     source: {type: 'device', driverId: 'AbbottFreeStyleNeo'},
     enabled: {linux: true, mac: true, win: true},
     powerOnlyWarning: true,
+  },
+  abbottlibreview: {
+    instructions: i18n.t('Select CSV file downloaded from LibreView'),
+    key: 'abbottlibreview',
+    name: 'Abbott LibreView',
+    source: {type: 'block', driverId: 'AbbottLibreView', extension: '.csv'},
+    enabled: {linux: true, mac: true, win: true},
   },
   precisionxtra: {
     instructions: i18n.t('Plug in meter with cable'),
@@ -86,6 +84,8 @@ const devices = {
     key: 'caresensble',
     source: {type: 'device', driverId: 'BluetoothLE'},
     enabled: {mac: true, win: false, linux: true}
+    // PIN pairing for WebBluetooth is not currently supported on Windows 10:
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=960258
   },
   dexcom: {
     instructions: i18n.t('Plug in receiver with micro-USB'),
@@ -99,6 +99,7 @@ const devices = {
                     text: i18n.t('Plug in meter with cable and set meter to'),
                     linkText: i18n.t('PC Link Mode'),
                     link: 'https://support.tidepool.org/hc/en-us/articles/4402234174100',
+                    afterLink: i18n.t('afterLink', '')
                   },
     name: 'GLUCOCARD Expression',
     key: 'glucocardexpression',
@@ -156,6 +157,14 @@ const devices = {
     source: {type: 'device', driverId: 'Medtronic600'},
     enabled: {mac: true, win: true, linux: true}
   },
+  onetouchselect: {
+    instructions: i18n.t('Plug in meter with micro-USB'),
+    name: 'OneTouch Select Plus Flex',
+    key: 'onetouchselect',
+    source: {type: 'device', driverId: 'OneTouchSelect'},
+    enabled: {linux: true, mac: true, win: true},
+    powerOnlyWarning: true,
+  },
   onetouchverio: {
     instructions: i18n.t('Plug in meter with micro-USB'),
     name: i18n.t('OneTouch Verio, Verio Flex and Verio Reflect'),
@@ -163,6 +172,15 @@ const devices = {
     source: {type: 'device', driverId: 'OneTouchVerio'},
     enabled: {linux: true, mac: true, win: true},
     powerOnlyWarning: true,
+  },
+  onetouchverioble: {
+    instructions: i18n.t('Turn meter on and make sure Bluetooth is switched on'),
+    name: 'OneTouch Verio Flex, Verio Reflect & Select Plus Flex (with Bluetooth)',
+    key: 'onetouchverioble',
+    source: {type: 'device', driverId: 'OneTouchVerioBLE'},
+    enabled: {mac: true, win: false, linux: true}
+    // PIN pairing for WebBluetooth is not currently supported on Windows 10:
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=960258
   },
   onetouchverioiq: {
     instructions: i18n.t('Plug in meter with mini-USB'),
@@ -195,12 +213,22 @@ const devices = {
   },
   accuchekusb: {
     instructions: i18n.t('Plug in meter with micro-USB cable'),
-    name: 'Roche Accu-Chek Aviva Connect, Guide & Guide Me',
+    name: 'Roche Accu-Chek Aviva Connect, Instant, Guide & Guide Me',
     key: 'accuchekusb',
     source: {type: 'device', driverId: 'AccuChekUSB'},
     enabled: {mac: true, win: true, linux: true},
     powerOnlyWarning: true,  // shows warning for power-only USB cables
   },
+  accucheksmartpix: {
+    instructions: [
+      i18n.t('Ensure the Smart Pix is mounted before starting.'),
+      i18n.t('Click send and then start the transfer from your device.'),
+    ],
+    name: 'Roche Accu-Chek Smart Pix',
+    key: 'accucheksmartpix',
+    source: {type: 'device', driverId: 'AccuChekSmartPix'},
+    enabled: {mac: true, win: true, linux: true},
+  },  
   tandem: {
     instructions: i18n.t('Plug in pump with micro-USB'),
     key: 'tandem',
@@ -214,6 +242,13 @@ const devices = {
     name: 'Trividia Health True Metrix',
     key: 'truemetrix',
     source: {type: 'device', driverId: 'TrueMetrix'},
+    enabled: {mac: true, win: true, linux: true}
+  },
+  weitai: {
+    instructions: 'Plug in PDA with micro-USB',
+    name: 'Equil Insulin Patch/Micro Pump',
+    key: 'weitai',
+    source: {type: 'device', driverId: 'Weitai'},
     enabled: {mac: true, win: true, linux: true}
   },
 };

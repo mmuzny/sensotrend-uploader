@@ -1,6 +1,6 @@
 {
   "name": "diabetes-dossier-ch-uat-uploader",
-  "version": "2.38.1-a",
+  "version": "2.44.0",
   "description": "diabetes-dossier.ch UAT Uploader",
   "private": true,
   "main": "main.prod.js",
@@ -30,7 +30,6 @@
     "start-renderer-dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.renderer.dev.babel.js",
     "start-main-dev": "cross-env HOT=1 NODE_ENV=development electron -r @babel/register ./app/main.dev.js",
     "prepare-qa-build": "node -r @babel/register scripts/prepare-qa-build.js",
-    "prepackage": "yarn build-about",
     "package": "npm run build-quiet && electron-builder -p always -c electron-builder-publish.js"
   },
   "dependencies": {
@@ -54,19 +53,20 @@
     "es6-error": "4.1.1",
     "ftdi-js": "0.0.6",
     "history": "4.10.1",
-    "i18next": "19.4.5",
-    "i18next-fs-backend": "1.0.2",
+    "i18next": "20.6.1",
+    "i18next-fs-backend": "1.1.1",
     "iconv-lite": "0.6.2",
     "identity-obj-proxy": "3.0.0",
     "immutability-helper": "3.1.1",
     "is-electron": "2.2.0",
     "lodash": "4.17.21",
     "lzo-wasm": "0.0.4",
-    "os-name": "3.1.0",
+    "os-name": "4.0.1",
     "pl2303": "0.0.5",
     "plist": "3.0.1",
     "prop-types": "15.7.2",
     "react": "16.14.0",
+    "redux-cache": "0.3.0",
     "react-dom": "16.14.0",
     "react-hot-loader": "4.13.0",
     "react-redux": "7.2.2",
@@ -82,7 +82,7 @@
     "stack-trace": "0.0.10",
     "sudo-prompt": "9.2.1",
     "sundial": "1.6.0",
-    "tidepool-platform-client": "0.44.0",
+    "tidepool-platform-client": "0.48.0",
     "usb-cdc-acm": "0.1.1",
     "uuid": "7.0.3",
     "webmtp": "0.1.0",
@@ -213,7 +213,8 @@
       "**/test/(app|lib)/**/*.js"
     ],
     "transformIgnorePatterns": [
-      "<rootDir>/node_modules/"
+      "<rootDir>/node_modules/",
+      "platform-client"
     ],
     "moduleDirectories": [
       "node_modules",
