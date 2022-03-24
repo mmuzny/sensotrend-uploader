@@ -2,13 +2,13 @@ const config = {
   publish: [
     {
       provider: 'generic',
-      url: 'https://www.sensotrend.fi/download/uploader/update/${os}',
+      url: 'https://dev.sensotrend.fi/download/uploader/update/${os}?v=demo',
       channel: 'latest',
       useMultipleRangeRequest: false
     },
   ],
-  productName: 'Sensotrend Uploader',
-  appId: 'org.sensotrend.SensotrendUploader',
+  productName: 'Sensotrend Uploader DEMO',
+  appId: 'org.sensotrend.SensotrendUploaderDemo',
   directories: {
     buildResources: 'resources',
     output: 'release'
