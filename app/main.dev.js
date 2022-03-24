@@ -530,8 +530,8 @@ ipcMain.on('autoUpdater', (event, arg) => {
   autoUpdater[arg]();
 });
 
-if(!app.isDefaultProtocolClient('sensotrendupload')){
-  app.setAsDefaultProtocolClient('sensotrendupload');
+if(!app.isDefaultProtocolClient('sensotrendupload-demo')){
+  app.setAsDefaultProtocolClient('sensotrendupload-demo');
 }
 
 app.on('window-all-closed', () => {
