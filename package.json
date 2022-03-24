@@ -1,7 +1,7 @@
 {
-  "name": "sensotrend-uploader",
+  "name": "sensotrend-uploader-demo",
   "version": "2.44.0",
-  "description": "Sensotrend Uploader",
+  "description": "Sensotrend Uploader DEMO",
   "private": true,
   "main": "main.prod.js",
   "author": "Mikael Rinnetmäki",

@@ -1,8 +1,8 @@
 {
-  "name": "sensotrend-uploader",
-  "productName": "sensotrend-uploader",
+  "name": "sensotrend-uploader-demo",
+  "productName": "sensotrend-uploader-demo",
   "version": "2.44.0",
-  "description": "Sensotrend Uploader",
+  "description": "Sensotrend Uploader DEMO",
   "main": "./main.prod.js",
   "author": {
     "name": "Sensotrend Oy",
