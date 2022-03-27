@@ -82,7 +82,7 @@ const serverdata = {
     DATA_URL: 'https://test-connect.sensotrend.fi/tpdata',
     BLIP_URL: 'https://test.sensotrend.fi/api'
   },
-  Integration: {
+  InterSystems: {
     API_URL: 'https://intersystems-demo.sensotrend.fi/tpapi',
     UPLOAD_URL: 'https://intersystems-demo.sensotrend.fi/tpupload',
     DATA_URL: 'https://intersystems-demo.sensotrend.fi/tpdata',
