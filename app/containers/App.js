@@ -88,6 +88,12 @@ const serverdata = {
     DATA_URL: 'https://intersystems-demo.sensotrend.fi/tpdata',
     BLIP_URL: 'https://dev.sensotrend.fi/api'
   },
+  KotiDigi: {
+    API_URL: 'https://kotidigi-demo.sensotrend.fi/tpapi',
+    UPLOAD_URL: 'https://kotidigi-demo.sensotrend.fi/tpupload',
+    DATA_URL: 'https://kotidigi-demo.sensotrend.fi/tpdata',
+    BLIP_URL: 'https://dev.sensotrend.fi/api'
+  },
   Production: {
     API_URL: 'https://connect.sensotrend.fi/tpapi',
     UPLOAD_URL: 'https://connect.sensotrend.fi/tpupload',
@@ -95,7 +101,6 @@ const serverdata = {
     BLIP_URL: 'https://www.sensotrend.fi/api'
   }
 };
-
 
 const availableLanguages = i18nextOptions.supportedLngs;
 
