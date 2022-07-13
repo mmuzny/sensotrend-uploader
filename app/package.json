@@ -1,7 +1,7 @@
 {
   "name": "diabetes-dossier-ch-uat-uploader",
   "productName": "diabetes-dossier-ch-uat-uploader",
-  "version": "2.44.0",
+  "version": "2.46.0",
   "description": "diabetes-dossier.ch UAT Uploader",
   "main": "./main.prod.js",
   "author": {
